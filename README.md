@@ -87,6 +87,11 @@ Proyek ini merupakan implementasi **Event Aggregator Service** berbasis **FastAP
   uvicorn src.main:app
   ```
 
+- Akses aplikasi di
+  ```
+  http://localhost:8000/
+  ```
+
 - Jalankan unittest (optional)  
   ```
   pytest -v tests/test_app.py
