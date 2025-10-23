@@ -106,7 +106,7 @@ Proyek ini merupakan implementasi **Event Aggregator Service** berbasis **FastAP
 
 ## Request & Response
 
-- ### /publish
+- ### POST /publish
   - *****Request*****
   ```
   [
@@ -151,7 +151,7 @@ Proyek ini merupakan implementasi **Event Aggregator Service** berbasis **FastAP
   ```
 
 
-- ### /events?topic=xxxxx
+- ### GET /events?topic=xxxxx
   - *****Response*****
   ```
   [
@@ -172,7 +172,7 @@ Proyek ini merupakan implementasi **Event Aggregator Service** berbasis **FastAP
   ]
   ```
 
-- ### /stats
+- ### GET /stats
   - *****Response*****
   ```
   {
