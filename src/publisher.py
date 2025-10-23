@@ -3,6 +3,9 @@ import uuid
 import random
 import time
 from datetime import datetime, timezone
+from src.utils import setup_logger
+
+logger = setup_logger()
 
 PUBLISH_URL = "http://localhost:8000/publish"
 
@@ -22,13 +25,7 @@ def generate_event(topic=None, source=None):
     }
 
 def simulate_delivery(batch_size=10, duplication_rate=0.2, delay=0.3):
-    """
-    Simulate sending events with intentional duplicates.
-    batch_size: total number of unique events to generate
-    duplication_rate: fraction of events to resend (0.2 = 20%)
-    delay: seconds between sends
-    """
-    print(f"Simulating {batch_size} events with {int(duplication_rate*100)}% duplicates...")
+    logger.info(f"Simulating {batch_size} events with {int(duplication_rate*100)}% duplicates...")
     events = [generate_event() for _ in range(batch_size)]
 
     # Randomly duplicate some events
